@@ -76,12 +76,21 @@
 <body>
     <h1>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ්</h1>
     
-    <div id="cell-biology">
+    <div id="cell-biology" class="locked-pack">
         <h2>සෛල ජීව විද්‍යාව</h2>
-        <div class="card-container">
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <input type="password" id="cell-biology-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+            <button onclick="checkPassword('cell-biology', 'CELLS')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content">
             <div class="flashcard card-1">
                 <div class="card-front"><p>ප්‍රශ්නය: සෛලයක ශක්ති කර්මාන්ත ශාලාව ලෙස හඳුන්වන්නේ කුමක්ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: මයිටොකොන්ඩ්‍රියා</p></div>
+            </div>
+            <div class="flashcard card-2">
+                <div class="card-front"><p>ප්‍රශ්නය: ශාක සෛල වල අඩංගු හරිතප්‍රද පිහිටා ඇත්තේ කුමන ඉන්ද්‍රිකාවේ ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: හරිතලව</p></div>
             </div>
         </div>
     </div>
@@ -137,7 +146,6 @@
             }
         }
         
-        // ෆ්ලෑෂ් කාඩ් පෙරළෙන කෝඩ් එක
         document.querySelectorAll('.flashcard').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('flipped');
