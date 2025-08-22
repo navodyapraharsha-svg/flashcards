@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ්</title>
+    <title>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ් (Pandy Packs)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -118,6 +118,29 @@
     </div>
     
     <script>
+// මුරපදය මෙතනට දාන්න
+const accessCode = "BIOLOGY2025"; 
+
+function checkAccess() {
+    let enteredCode = prompt("ප්‍රවේශ කේතය ඇතුළත් කරන්න:");
+    if (enteredCode === accessCode) {
+        document.body.style.display = "block";
+    } else {
+        alert("වැරදි ප්‍රවේශ කේතය! නැවත උත්සාහ කරන්න.");
+        window.location.reload();
+    }
+}
+
+// මුලින්ම වෙබ් අඩවිය සඟවමු
+document.body.style.display = "none";
+
+// පිටුව Load වූ පසු මුරපදය අහන්න
+window.onload = checkAccess;
+
+
+document.body.style.display = "none";
+
+window.onload = checkAccess;
         document.querySelectorAll('.flashcard').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('flipped');
