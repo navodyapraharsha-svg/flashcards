@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ් (Pandy Packs)</title>
+    <title>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ්</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,19 +43,10 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        .card-front {
-            transform: rotateY(0deg);
-        }
-        .card-back {
-            transform: rotateY(180deg);
-        }
-        .flashcard.flipped .card-front {
-            transform: rotateY(180deg);
-        }
-        .flashcard.flipped .card-back {
-            transform: rotateY(360deg);
-        }
-        /* කාඩ්පත් වලට පාට එකතු කිරීම */
+        .card-front { transform: rotateY(0deg); }
+        .card-back { transform: rotateY(180deg); }
+        .flashcard.flipped .card-front { transform: rotateY(180deg); }
+        .flashcard.flipped .card-back { transform: rotateY(360deg); }
         .card-1 .card-front { background-color: #ffe0e0; }
         .card-1 .card-back { background-color: #ffc0c0; }
         .card-2 .card-front { background-color: #e0f0ff; }
@@ -66,6 +57,20 @@
         .card-4 .card-back { background-color: #f0e68c; }
         .card-5 .card-front { background-color: #f0e0ff; }
         .card-5 .card-back { background-color: #d0c0ff; }
+
+        /* අගුළු දාපු කොටස් සැඟවීමට */
+        .locked-pack {
+            text-align: center;
+        }
+        .locked-content {
+            display: none;
+        }
+        .unlocked-content {
+            display: block;
+        }
+        .lock-container {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -75,72 +80,64 @@
         <h2>සෛල ජීව විද්‍යාව</h2>
         <div class="card-container">
             <div class="flashcard card-1">
-                <div class="card-front">
-                    <p>ප්‍රශ්නය: සෛලයක ශක්ති කර්මාන්ත ශාලාව ලෙස හඳුන්වන්නේ කුමක්ද?</p>
-                </div>
-                <div class="card-back">
-                    <p>පිළිතුර: මයිටොකොන්ඩ්‍රියා</p>
-                </div>
-            </div>
-            
-            <div class="flashcard card-2">
-                <div class="card-front">
-                    <p>ප්‍රශ්නය: ශාක සෛල වල අඩංගු හරිතප්‍රද පිහිටා ඇත්තේ කුමන ඉන්ද්‍රිකාවේ ද?</p>
-                </div>
-                <div class="card-back">
-                    <p>පිළිතුර: හරිතලව</p>
-                </div>
+                <div class="card-front"><p>ප්‍රශ්නය: සෛලයක ශක්ති කර්මාන්ත ශාලාව ලෙස හඳුන්වන්නේ කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: මයිටොකොන්ඩ්‍රියා</p></div>
             </div>
         </div>
     </div>
 
-    <div id="human-body">
+    <div id="human-body" class="locked-pack">
         <h2>මානව දේහය</h2>
-        <div class="card-container">
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <input type="password" id="human-body-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+            <button onclick="checkPassword('human-body', 'BODY123')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content">
             <div class="flashcard card-3">
-                <div class="card-front">
-                    <p>ප්‍රශ්නය: මානව රුධිරයේ ඇති ප්‍රධානම ප්‍රෝටීනය කුමක්ද?</p>
-                </div>
-                <div class="card-back">
-                    <p>පිළිතුර: ඇල්බියුමින්</p>
-                </div>
+                <div class="card-front"><p>ප්‍රශ්නය: මානව රුධිරයේ ඇති ප්‍රධානම ප්‍රෝටීනය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ඇල්බියුමින්</p></div>
             </div>
-            
             <div class="flashcard card-4">
-                <div class="card-front">
-                    <p>ප්‍රශ්නය: මානව දේහයේ විශාලතම අස්ථිය කුමක්ද?</p>
-                </div>
-                <div class="card-back">
-                    <p>පිළිතුර: කලව අස්ථිය (Femur)</p>
-                </div>
+                <div class="card-front"><p>ප්‍රශ්නය: මානව දේහයේ විශාලතම අස්ථිය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: කලව අස්ථිය (Femur)</p></div>
             </div>
         </div>
     </div>
     
+    <div id="photosynthesis" class="locked-pack">
+        <h2>ප්‍රභාසංස්ලේෂණය</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <input type="password" id="photosynthesis-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+            <button onclick="checkPassword('photosynthesis', 'LIGHT')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content">
+            <div class="flashcard card-5">
+                <div class="card-front"><p>ප්‍රශ්නය: ප්‍රභාසංස්ලේෂණයේදී ශාක මගින් නිපදවන වායුව කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ඔක්සිජන්</p></div>
+            </div>
+        </div>
+    </div>
+
     <script>
-// මුරපදය මෙතනට දාන්න
-const accessCode = "BIOLOGY2025"; 
+        function checkPassword(packId, correctPassword) {
+            const inputId = `${packId}-pass`;
+            const enteredPassword = document.getElementById(inputId).value;
 
-function checkAccess() {
-    let enteredCode = prompt("ප්‍රවේශ කේතය ඇතුළත් කරන්න:");
-    if (enteredCode === accessCode) {
-        document.body.style.display = "block";
-    } else {
-        alert("වැරදි ප්‍රවේශ කේතය! නැවත උත්සාහ කරන්න.");
-        window.location.reload();
-    }
-}
+            if (enteredPassword === correctPassword) {
+                const pack = document.getElementById(packId);
+                const lockedContent = pack.querySelector('.locked-content');
+                const lockContainer = pack.querySelector('.lock-container');
 
-// මුලින්ම වෙබ් අඩවිය සඟවමු
-document.body.style.display = "none";
-
-// පිටුව Load වූ පසු මුරපදය අහන්න
-window.onload = checkAccess;
-
-
-document.body.style.display = "none";
-
-window.onload = checkAccess;
+                lockedContent.style.display = 'flex';
+                lockContainer.style.display = 'none';
+            } else {
+                alert("වැරදි මුරපදය! නැවත උත්සාහ කරන්න.");
+            }
+        }
+        
+        // ෆ්ලෑෂ් කාඩ් පෙරළෙන කෝඩ් එක
         document.querySelectorAll('.flashcard').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('flipped');
