@@ -12,19 +12,13 @@
             flex-direction: column;
             align-items: center;
                                   
-            background-image: url('1.jpg');
-    
-            background-size: cover; /* රූපය මුළු පිටුවම ආවරණය වන සේ සකස් කරයි */
-    
-            background-repeat: no-repeat; /* රූපය නැවත නැවත නොපෙන්වයි */
-    
-            background-attachment: fixed; /* පිටුව scroll කරන විට රූපය ස්ථාවරව තබා ගනී */
+            background-color: #f0f0f0;
             
             margin: 0;
             padding: 20px;}
 
             h1
-            {color: #FFFFFF;
+            {color: #000000;
             text-align: center;
             margin-bottom: 20px;
             -webkit-text-stroke: 0px #FFFFFF; /* බෝඩරයේ ඝනකම සහ වර්ණය */
@@ -185,11 +179,50 @@ font-size: 16px;}
             user-select: none;
         }
 
-        h2 {
-            margin-top: 60px;
-            color: #FFFFFF;
-        }
-    </style>
+        h2
+        {margin-top: 60px;
+        color: #000000;}
+
+    /* Feedback බොත්තම් අඩංගු කොටුව */
+    .feedback-buttons {
+    display: flex; /* කොටුව Flexbox ලෙස සකසයි */
+    width: 100%; /* සම්පූර්ණ පළල පුරා විහිදේ */
+    height: 60px; /* උස නියම කරයි */
+    position: absolute; /* ෆ්ලෑෂ් කාඩ්පතේ පහළට තල්ලු කරයි */
+    bottom: 0;
+    left: 0;}
+
+            /* "හරි" බොත්තම */
+    .correct-btn {
+    flex: 1; /* ලබා දී ඇති ඉඩෙන් සමාන කොටසක් ලබා ගනී */
+    background-color: #28a745; /* කොළ පාට */
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom-left-radius: 10px; /* වම්පස පහළ කෙළවර වටකුරු කරයි */
+    transition: background-color 0.3s;}
+
+    .correct-btn:hover {
+    background-color: #218838;}
+
+           /* "වැරදි" බොත්තම */
+    .incorrect-btn {
+    flex: 1; /* ලබා දී ඇති ඉඩෙන් සමාන කොටසක් ලබා ගනී */
+    background-color: #dc3545; /* රතු පාට */
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom-right-radius: 10px; /* දකුණුපස පහළ කෙළවර වටකුරු කරයි */
+    transition: background-color 0.3s;}
+
+    .incorrect-btn:hover {
+    background-color: #c82333;} 
+
+</style>
 </head>
 
 <body>
@@ -212,33 +245,69 @@ font-size: 16px;}
 
         <div id="pack-1" class="flashcard-pack">
         <h2>ජීව විද්‍යාව හඳුන්වා දීම</h2>
+        <p id="progress-display-pack-1">ඔබේ ප්‍රගතිය: නිවැරදි පිළිතුරු 0 / 5</p>
         <div class="card-container pack-1 unlocked-content">
         
         <!-- Flashcard 1 -->
         <div class="flashcard">
         <div class="card-front"><p>ප්‍රශ්නය: ජීව විද්‍යාව යනු කුමක් ද?</p></div>
-        <div class="card-back"><p>පිළිතුර: ජීවීන් පිළිබඳ අධ්‍යනය සඳහා විශේෂ අවධානයක් සහිත විද්‍යාවයි.</p></div></div>
+        <div class="card-back"><p>පිළිතුර: ජීවීන් පිළිබඳ අධ්‍යනය සඳහා විශේෂ අවධානයක් සහිත විද්‍යාවයි.</p>
+        <div class="feedback-buttons">
+      
+        <button class="correct-btn" onclick="recordProgress(true, this)">✔</button>
+      
+        <button class="incorrect-btn" onclick="recordProgress(false, this)">✘</button>
+    
+        </div></div></div>
             
         <!-- Flashcard 2 -->
         <div class="flashcard">
         <div class="card-front"><p>ප්‍රශ්නය: ජීව විද්‍යාව බෙදා ඇති ප්‍රධාන ශාඛා තුන මොනවා ද?</p></div>
-        <div class="card-back"><p>පිළිතුර: සත්ත්ව විද්‍යාව, උද්භිද විද්‍යාව හා ක්ෂුද්‍රජීව විද්‍යාව</p></div></div>
+        <div class="card-back"><p>පිළිතුර: සත්ත්ව විද්‍යාව, උද්භිද විද්‍යාව හා ක්ෂුද්‍රජීව විද්‍යාව</p>
+        <div class="feedback-buttons">
+      
+        <button class="correct-btn" onclick="recordProgress(true, this)">✔</button>
+      
+        <button class="incorrect-btn" onclick="recordProgress(false, this)">✘</button>
+    
+        </div></div></div>
             
         <!-- Flashcard 3 -->
         <div class="flashcard">
         <div class="card-front"><p>ප්‍රශ්නය: ආවේණිය පිළිබඳව අධ්‍යනය කෙරෙන විෂය ක්ෂේත්‍රය කුමක් ද?</p></div>
-        <div class="card-back"><p>පිළිතුර: ප්‍රවේණිය</p></div></div>
+        <div class="card-back"><p>පිළිතුර: ප්‍රවේණිය</p>
+        <div class="feedback-buttons">
+      
+        <button class="correct-btn" onclick="recordProgress(true, this)">✔</button>
+      
+        <button class="incorrect-btn" onclick="recordProgress(false, this)">✘</button>
+    
+        </div></div></div>
 
         <!-- Flashcard 4 -->
         <div class="flashcard">
         <div class="card-front"><p>ප්‍රශ්නය: පෘථිවිය මත ජීවය බිහි වූයේ කොපමණ කලකට පෙර ද?</p></div>
-        <div class="card-back"><p>පිළිතුර: වර්ෂ බිලියන 3.5කට පෙර</p></div></div>
+        <div class="card-back"><p>පිළිතුර: වර්ෂ බිලියන 3.5කට පෙර</p>
+        <div class="feedback-buttons">
+      
+        <button class="correct-btn" onclick="recordProgress(true, this)">✔</button>
+      
+        <button class="incorrect-btn" onclick="recordProgress(false, this)">✘</button>
+    
+        </div></div></div>
        
 
         <!-- Flashcard 5 -->
         <div class="flashcard">
         <div class="card-front"><p>ප්‍රශ්නය: පෘථිවිය මත ජීවී විශේෂ කොපමණ සිටින බවට විද්‍යාඥයින් අනුමාන කරයි ද?</p></div>
-        <div class="card-back"><p>පිළිතුර: මිලියන 10-100කටත් වඩා</p></div></div>
+        <div class="card-back"><p>පිළිතුර: මිලියන 10-100කටත් වඩා</p>
+        <div class="feedback-buttons">
+      
+        <button class="correct-btn" onclick="recordProgress(true, this)">✔</button>
+      
+        <button class="incorrect-btn" onclick="recordProgress(false, this)">✘</button>
+    
+        </div></div></div>
 
         </div></div></div></div>
 
@@ -430,6 +499,40 @@ font-size: 16px;}
                 card.classList.toggle('flipped');
             });
         });
+
+
+let totalCards = 0;
+let correctAnswers = 0;
+
+// මුලින්ම සියලු ෆ්ලෑෂ් කාඩ්පත් ගණන ගණනය කිරීම
+document.addEventListener('DOMContentLoaded', () => {
+    totalCards = document.querySelectorAll('.flashcard').length;
+});
+
+function recordProgress(isCorrect, buttonElement) 
+{if (isCorrect) 
+{correctAnswers++;
+alert("හරි!");} 
+else {alert("වැරදි!");}
+
+    // බොත්තම් අක්‍රිය කිරීම, එක් වරක් පමණක් පිළිතුරු දීමට ඉඩ සැලසීමට
+    const feedbackDiv = buttonElement.parentElement;
+    feedbackDiv.querySelectorAll('button').forEach(btn => {
+        btn.disabled = true;
+    });
+
+    // ප්‍රගතිය පෙන්වීම
+    updateProgressDisplay();
+}
+
+function updateProgressDisplay() {
+    // මෙය පෙන්වීමට ස්ථානයක් HTML එකට එකතු කළ යුතුය
+    // උදාහරණයක් ලෙස: <p id="progress-display"></p>
+    const progressDisplay = document.getElementById('progress-display');
+    if (progressDisplay) {
+        progressDisplay.textContent = `ඔබේ ප්‍රගතිය: නිවැරදි පිළිතුරු ${correctAnswers} / ${totalCards}`;
+    }
+}
     </script>
 </body>
 </html>
