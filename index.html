@@ -3,17 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ්</title>
+    <title>අ.පො.ස. (උසස් පෙළ) ජීව විද්‍යා ෆ්ලෑෂ් කාඩ්</title>
     <style>
+.highlight {
+    font-size: 1em; /* අකුරු ප්‍රමාණය 1.5 ගුණයකින් විශාල කරයි */
+    font-weight: bold; /* අකුරු තද කරයි (bold) */
+    color: ffffff; /* කැමති නම් පාටක් එකතු කරන්න පුළුවන් */}
         body {
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #e8f0f7; /* Background color for the home page */
             margin: 0;
             padding: 20px;
         }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+.intro-box {
+background-color: #d1ecf1;
+           
+border: 1px solid #bee5eb;
+            
+border-radius: 5px;
+            
+padding: 15px;
+            
+margin-top: 20px;
+ 
+margin-bottom: 40px;           
+width: 80%;
+            
+max-width: 900px;
+           
+ text-align: center;
+            
+color: #0c5460;
+            
+font-size: 16px;}
+
 
         .pack-buttons {
             display: flex;
@@ -87,35 +119,29 @@
         .flashcard.flipped .card-front { transform: rotateY(180deg); }
         .flashcard.flipped .card-back { transform: rotateY(360deg); }
 
-        /* කාඩ්පත් වලට වර්ණ ලබා දීම */
-        .pack-1 .card-front { background-color: #ffe0e0; }
-        .pack-1 .card-back { background-color: #ffc0c0; }
-        .pack-2 .card-front { background-color: #e0f0ff; }
-        .pack-2 .card-back { background-color: #c0e0ff; }
-        .pack-3 .card-front { background-color: #e0ffe0; }
-        .pack-3 .card-back { background-color: #c0ffc0; }
-        .pack-4 .card-front { background-color: #fffac8; }
-        .pack-4 .card-back { background-color: #f0e68c; }
-        .pack-5 .card-front { background-color: #f0e0ff; }
-        .pack-5 .card-back { background-color: #d0c0ff; }
-        .pack-6 .card-front { background-color: #d9e2f3; }
-        .pack-6 .card-back { background-color: #b3cbe6; }
-        .pack-7 .card-front { background-color: #f3d9e2; }
-        .pack-7 .card-back { background-color: #e6b3cb; }
-        .pack-8 .card-front { background-color: #d9f3e2; }
-        .pack-8 .card-back { background-color: #b3e6cb; }
-        .pack-9 .card-front { background-color: #f3d9d9; }
-        .pack-9 .card-back { background-color: #e6b3b3; }
-        .pack-10 .card-front { background-color: #d9f3f3; }
-        .pack-10 .card-back { background-color: #b3e6e6; }
+        /* Assigning colors to the flashcards */
+        .pack-1 .card-front { background-color: #e0f7fa; }
+        .pack-1 .card-back { background-color: #b2ebf2; }
+        .pack-2 .card-front { background-color: #dcedc8; }
+        .pack-2 .card-back { background-color: #c5e1a5; }
+        .pack-3 .card-front { background-color: #ffcdd2; }
+        .pack-3 .card-back { background-color: #ef9a9a; }
+        .pack-4 .card-front { background-color: #fff9c4; }
+        .pack-4 .card-back { background-color: #fff59d; }
+        .pack-5 .card-front { background-color: #d1c4e9; }
+        .pack-5 .card-back { background-color: #b39ddb; }
+        .pack-6 .card-front { background-color: #c8e6c9; }
+        .pack-6 .card-back { background-color: #a5d6a7; }
+        .pack-7 .card-front { background-color: #bbdefb; }
+        .pack-7 .card-back { background-color: #90caf9; }
+        .pack-8 .card-front { background-color: #ffecb3; }
+        .pack-8 .card-back { background-color: #ffe082; }
+        .pack-9 .card-front { background-color: #f8bbd0; }
+        .pack-9 .card-back { background-color: #f48fb1; }
+        .pack-10 .card-front { background-color: #b2dfdb; }
+        .pack-10 .card-back { background-color: #80cbc4; }
         
-        .flashcard-pack {
-            display: none;
-            width: 100%;
-            text-align: center;
-        }
-
-        .locked-pack {
+        .flashcard-pack, .locked-pack {
             display: none;
             width: 100%;
             text-align: center;
@@ -152,100 +178,138 @@
 
         h2 {
             margin-top: 60px;
+            color: #34495e;
         }
     </style>
 </head>
 <body>
-    <h1>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ්</h1>
+    <h1>අ.පො.ස. (උසස් පෙළ) ජීව විද්‍යාව නව විෂය නිර්දේශයට අනුකූලව සැකසූ <span class="highlight">ඩිජිටල් ෆ්ලෑෂ් කාඩ්</span></h1>
+    <div class="intro-box">
+    <p>පළමු සහ දෙවන ඒකකවලින් ඇති ෆ්ලෑෂ් කාඩ් පැක් දෙක ඔබට නොමිලේ භාවිතා කළ හැකි ය. අනික් පාඩම් අට මුදල් ගෙවා මිල දී ගැනීමට සිදු වේ. එක් පැක් එකක් සඳහා රු.250/=ක ගාස්තුවක් අය කෙරේ.</p>
+    </div>
     
     <div class="pack-buttons">
-        <button class="btn-1" onclick="showPack('pack-1')">සෛල ජීව විද්‍යාව</button>
-        <button class="btn-2" onclick="showPack('pack-2')">මානව දේහය</button>
-        <button class="btn-3" onclick="showPack('pack-3')">ප්‍රභාසංස්ලේෂණය</button>
-        <button class="btn-4" onclick="showPack('pack-4')">ජාන විද්‍යාව</button>
-        <button class="btn-5" onclick="showPack('pack-5')">පරිණාමය</button>
-        <button class="btn-6" onclick="showPack('pack-6')">ශාක</button>
-        <button class="btn-7" onclick="showPack('pack-7')">සත්ව</button>
-        <button class="btn-8" onclick="showPack('pack-8')">වෛරස්</button>
-        <button class="btn-9" onclick="showPack('pack-9')">බැක්ටීරියා</button>
-        <button class="btn-10" onclick="showPack('pack-10')">පාරිසරික</button>
+        <button class="btn-1" onclick="showPack('pack-1')">1.ජීව විද්‍යාව හඳුන්වා දීම</button>
+        <button class="btn-2" onclick="showPack('pack-2')">2.ජීවයේ රසායනික හා සෛලීය පදනම</button>
+        <button class="btn-3" onclick="showPack('pack-3')">3.පරිණාමය හා ජීවීන්ගේ විවිධත්වය</button>
+        <button class="btn-4" onclick="showPack('pack-4')">4.ශාක ආකාරය හා ක්‍රියාකාරීත්වය</button>
+        <button class="btn-5" onclick="showPack('pack-5')">5.සත්ත්ව ආකාරය හා ක්‍රියාකාරීත්වය</button>
+        <button class="btn-6" onclick="showPack('pack-6')">6.ප්‍රවේණිය</button>
+        <button class="btn-7" onclick="showPack('pack-7')">7.අණුක ජීව විද්‍යාව හා ප්‍රතිසංයෝජිත DNA තාක්ෂණය</button>
+        <button class="btn-8" onclick="showPack('pack-8')">8.පාරිසරික ජීව විද්‍යාව</button>
+        <button class="btn-9" onclick="showPack('pack-9')">9.ක්ෂුද්‍ර ජීව විද්‍යාව</button>
+        <button class="btn-10" onclick="showPack('pack-10')">10.ව්‍යවහාරික ජීව විද්‍යාව</button>
     </div>
 
     <div id="pack-1" class="flashcard-pack">
-        <h2>සෛල ජීව විද්‍යාව</h2>
+        <h2>ජීව විද්‍යාව හඳුන්වා දීම</h2>
         <div class="card-container pack-1 unlocked-content">
+            <!-- Flashcard 1 -->
             <div class="flashcard">
-                <div class="card-front"><p>ප්‍රශ්නය: සෛලයක ශක්ති කර්මාන්ත ශාලාව ලෙස හඳුන්වන්නේ කුමක්ද?</p></div>
-                <div class="card-back"><p>පිළිතුර: මයිටොකොන්ඩ්‍රියා</p></div>
+                <div class="card-front"><p>ප්‍රශ්නය: ජීව විද්‍යාවේ ප්‍රධාන ක්ෂේත්‍ර කීයක් තිබේද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ක්ෂේත්‍ර 3 ක් (ශාක, සත්ව, ක්ෂුද්‍රජීවී)</p></div>
+            </div>
+            <!-- Flashcard 2 -->
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛල සිද්ධාන්තය ඉදිරිපත් කළේ කවුද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ශ්ලයිඩන් සහ ෂ්වාන්</p></div>
+            </div>
+            <!-- Additional 8 flashcards for Pack 1 -->
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: ජීව විද්‍යාව යනු කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ජීවීන් පිළිබඳ අධ්‍යයනය</p></div>
             </div>
             <div class="flashcard">
-                <div class="card-front"><p>ප්‍රශ්නය: ශාක සෛල වල අඩංගු හරිතප්‍රද පිහිටා ඇත්තේ කුමන ඉන්ද්‍රිකාවේ ද?</p></div>
-                <div class="card-back"><p>පිළිතුර: හරිතලව</p></div>
+                <div class="card-front"><p>ප්‍රශ්නය: අක්මාව, වකුගඩු වැනි ඉන්ද්‍රිය පද්ධතියක් එකට ක්‍රියා කරන ආකාරය අධ්‍යයනය කරන ක්ෂේත්‍රය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: කායික විද්‍යාව</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: ජීව විද්‍යාවේ ඇති ප්‍රධානම කාබනික අණු වර්ග මොනවාද?</p></div>
+                <div class="card-back"><p>පිළිතුර: කාබෝහයිඩ්‍රේට, ප්‍රෝටීන, ලිපිඩ, න්‍යෂ්ටික අම්ල</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: පරිණාමය අධ්‍යයනය කරන ජීව විද්‍යා ක්ෂේත්‍රය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: පරිණාමීය ජීව විද්‍යාව</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: ජෛව තාක්ෂණය යනු කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ජීවීන් හෝ ඔවුන්ගේ කොටස් භාවිතයෙන් නිෂ්පාදන හෝ ක්‍රියාවලි නිර්මාණය කිරීම හෝ වැඩිදියුණු කිරීම</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සත්ව විද්‍යාව යටතට වැටෙන්නේ කුමන ජීවීන් පිළිබඳ අධ්‍යයනය ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: සතුන්</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛල, පටක සහ ඉන්ද්‍රිය පද්ධති පිළිබඳ අධ්‍යයනය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: කායික විද්‍යාව</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: පරිසරය සහ එහි ජීවීන් අතර ඇති සම්බන්ධතාවය අධ්‍යයනය කරන ක්ෂේත්‍රය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: පරිසර විද්‍යාව</p></div>
             </div>
         </div>
     </div>
 
     <div id="pack-2" class="flashcard-pack">
-        <h2>මානව දේහය</h2>
+        <h2>ජීවයේ රසායනික හා සෛලීය පදනම</h2>
         <div class="card-container pack-2 unlocked-content">
+            <!-- Flashcard 1 -->
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛලයක ශක්ති කර්මාන්ත ශාලාව ලෙස හඳුන්වන්නේ කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: මයිටොකොන්ඩ්‍රියා</p></div>
+            </div>
+            <!-- Flashcard 2 -->
             <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: මානව රුධිරයේ ඇති ප්‍රධානම ප්‍රෝටීනය කුමක්ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: ඇල්බියුමින්</p></div>
             </div>
+            <!-- Additional 8 flashcards for Pack 2 -->
             <div class="flashcard">
-                <div class="card-front"><p>ප්‍රශ්නය: මානව දේහයේ විශාලතම අස්ථිය කුමක්ද?</p></div>
-                <div class="card-back"><p>පිළිතුර: කලව අස්ථිය (Femur)</p></div>
+                <div class="card-front"><p>ප්‍රශ්නය: ශාක සෛලයකට පමණක් ආවේණික වූ ඉන්ද්‍රිකාවක් නම් කරන්න.</p></div>
+                <div class="card-back"><p>පිළිතුර: ක්ලෝරෝප්ලාස්ටය</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: න්‍යෂ්ටික අම්ල වර්ග දෙක කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: DNA සහ RNA</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛලයක රසායනික ප්‍රතික්‍රියා වේගවත් කරන ප්‍රෝටීන වර්ගය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: එන්සයිම</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: ප්‍රෝටීන වල මූලික ඒකකය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ඇමයිනෝ අම්ල</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛල බිත්තියක් සෑදී ඇත්තේ කුමන සංයෝගයෙන්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: සෙලියුලෝස්</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛලයක ප්‍රධානතම ජානමය තොරතුරු රැගෙන යන්නේ කුමන අණුවද?</p></div>
+                <div class="card-back"><p>පිළිතුර: DNA</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛලයක අන්තඃසෛලීය ප්‍රවාහනය සඳහා උපකාර වන ඉන්ද්‍රිකාව කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: අන්තඃප්ලාස්මීය දැල</p></div>
+            </div>
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: සෛලයක ස්වයං විනාශයට වගකිව යුතු ඉන්ද්‍රිකාව කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ලයිසෝසෝම</p></div>
             </div>
         </div>
     </div>
     
     <div id="pack-3" class="locked-pack">
-        <h2>ප්‍රභාසංස්ලේෂණය</h2>
+        <h2>පරිණාමය හා ජීවීන්ගේ විවිධත්වය</h2>
         <div class="lock-container">
             <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
             <div class="password-container">
                 <input type="password" id="pack-3-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
                 <span class="toggle-password" onclick="togglePasswordVisibility('pack-3-pass')">👁️</span>
             </div>
-            <button onclick="checkPassword('pack-3', 'LIGHT')">අගුළු අරින්න</button>
+            <button onclick="checkPassword('pack-3', 'EVOLUTION')">අගුළු අරින්න</button>
         </div>
         <div class="card-container locked-content pack-3">
-            <div class="flashcard">
-                <div class="card-front"><p>ප්‍රශ්නය: ප්‍රභාසංස්ලේෂණයේදී ශාක මගින් නිපදවන වායුව කුමක්ද?</p></div>
-                <div class="card-back"><p>පිළිතුර: ඔක්සිජන්</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="pack-4" class="locked-pack">
-        <h2>ජාන විද්‍යාව</h2>
-        <div class="lock-container">
-            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
-            <div class="password-container">
-                <input type="password" id="pack-4-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
-                <span class="toggle-password" onclick="togglePasswordVisibility('pack-4-pass')">👁️</span>
-            </div>
-            <button onclick="checkPassword('pack-4', 'GENES')">අගුළු අරින්න</button>
-        </div>
-        <div class="card-container locked-content pack-4">
-            <div class="flashcard">
-                <div class="card-front"><p>ප්‍රශ්නය: DNA හි ද්විත්ව හෙලික්සීය ව්‍යුහය සොයාගත්තේ කවුරුන් විසින්ද?</p></div>
-                <div class="card-back"><p>පිළිතුර: ජේම්ස් වොට්සන් සහ ෆ්‍රැන්සිස් ක්‍රික්</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="pack-5" class="locked-pack">
-        <h2>පරිණාමය</h2>
-        <div class="lock-container">
-            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
-            <div class="password-container">
-                <input type="password" id="pack-5-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
-                <span class="toggle-password" onclick="togglePasswordVisibility('pack-5-pass')">👁️</span>
-            </div>
-            <button onclick="checkPassword('pack-5', 'EVOLVE')">අගුළු අරින්න</button>
-        </div>
-        <div class="card-container locked-content pack-5">
             <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: "On the Origin of Species" කෘතිය රචනා කළ විද්‍යාඥයා කවුද?</p></div>
                 <div class="card-back"><p>පිළිතුර: චාල්ස් ඩාවින්</p></div>
@@ -253,17 +317,17 @@
         </div>
     </div>
 
-    <div id="pack-6" class="locked-pack">
-        <h2>ශාක</h2>
+    <div id="pack-4" class="locked-pack">
+        <h2>ශාක ආකාරය හා ක්‍රියාකාරීත්වය</h2>
         <div class="lock-container">
             <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
             <div class="password-container">
-                <input type="password" id="pack-6-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
-                <span class="toggle-password" onclick="togglePasswordVisibility('pack-6-pass')">👁️</span>
+                <input type="password" id="pack-4-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-4-pass')">👁️</span>
             </div>
-            <button onclick="checkPassword('pack-6', 'PLANTS')">අගුළු අරින්න</button>
+            <button onclick="checkPassword('pack-4', 'PLANTS')">අගුළු අරින්න</button>
         </div>
-        <div class="card-container locked-content pack-6">
+        <div class="card-container locked-content pack-4">
             <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: ශාකයක ප්‍රභාසංස්ලේෂණය සඳහා අවශ්‍ය ප්‍රධාන ද්‍රව්‍ය මොනවාද?</p></div>
                 <div class="card-back"><p>පිළිතුර: කාබන්ඩයොක්සයිඩ්, ජලය සහ ආලෝකය</p></div>
@@ -271,17 +335,17 @@
         </div>
     </div>
 
-    <div id="pack-7" class="locked-pack">
-        <h2>සත්ව</h2>
+    <div id="pack-5" class="locked-pack">
+        <h2>සත්ත්ව ආකාරය හා ක්‍රියාකාරීත්වය</h2>
         <div class="lock-container">
             <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
             <div class="password-container">
-                <input type="password" id="pack-7-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
-                <span class="toggle-password" onclick="togglePasswordVisibility('pack-7-pass')">👁️</span>
+                <input type="password" id="pack-5-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-5-pass')">👁️</span>
             </div>
-            <button onclick="checkPassword('pack-7', 'ANIMALS')">අගුළු අරින්න</button>
+            <button onclick="checkPassword('pack-5', 'ANIMALS')">අගුළු අරින්න</button>
         </div>
-        <div class="card-container locked-content pack-7">
+        <div class="card-container locked-content pack-5">
             <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: පෘථිවියේ විශාලතම සත්වයා කුමක්ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: නිල් තල්මසා</p></div>
@@ -289,33 +353,69 @@
         </div>
     </div>
 
+    <div id="pack-6" class="locked-pack">
+        <h2>ප්‍රවේණිය</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-6-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-6-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-6', 'GENETICS')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-6">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: DNA හි ද්විත්ව හෙලික්සීය ව්‍යුහය සොයාගත්තේ කවුරුන්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ජේම්ස් වොට්සන් සහ ෆ්‍රැන්සිස් ක්‍රික්</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pack-7" class="locked-pack">
+        <h2>අණුක ජීව විද්‍යාව</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-7-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-7-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-7', 'MOLECULAR')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-7">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: ප්‍රෝටීන සංස්ලේෂණය සිදුවන්නේ කොහේද?</p></div>
+                <div class="card-back"><p>පිළිතුර: රයිබොසෝම තුළ</p></div>
+            </div>
+        </div>
+    </div>
+
     <div id="pack-8" class="locked-pack">
-        <h2>වෛරස්</h2>
+        <h2>පාරිසරික ජීව විද්‍යාව</h2>
         <div class="lock-container">
             <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
             <div class="password-container">
                 <input type="password" id="pack-8-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
                 <span class="toggle-password" onclick="togglePasswordVisibility('pack-8-pass')">👁️</span>
             </div>
-            <button onclick="checkPassword('pack-8', 'VIRUS')">අගුළු අරින්න</button>
+            <button onclick="checkPassword('pack-8', 'ECOLOGY')">අගුළු අරින්න</button>
         </div>
         <div class="card-container locked-content pack-8">
             <div class="flashcard">
-                <div class="card-front"><p>ප්‍රශ්නය: වෛරසයක ප්‍රධාන සංරචක මොනවාද?</p></div>
-                <div class="card-back"><p>පිළිතුර: ප්‍රෝටීන් කබායක් සහ න්‍යෂ්ටික අම්ලයක් (DNA හෝ RNA)</p></div>
+                <div class="card-front"><p>ප්‍රශ්නය: පාරිසරික පිරමිඩයක පහළම මට්ටමේ සිටින්නේ කවුද?</p></div>
+                <div class="card-back"><p>පිළිතුර: නිෂ්පාදකයන් (ශාක)</p></div>
             </div>
         </div>
     </div>
 
     <div id="pack-9" class="locked-pack">
-        <h2>බැක්ටීරියා</h2>
+        <h2>ක්ෂුද්‍ර ජීව විද්‍යාව</h2>
         <div class="lock-container">
             <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
             <div class="password-container">
                 <input type="password" id="pack-9-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
                 <span class="toggle-password" onclick="togglePasswordVisibility('pack-9-pass')">👁️</span>
             </div>
-            <button onclick="checkPassword('pack-9', 'BACTERIA')">අගුළු අරින්න</button>
+            <button onclick="checkPassword('pack-9', 'MICRO')">අගුළු අරින්න</button>
         </div>
         <div class="card-container locked-content pack-9">
             <div class="flashcard">
@@ -326,35 +426,40 @@
     </div>
 
     <div id="pack-10" class="locked-pack">
-        <h2>පාරිසරික</h2>
+        <h2>ව්‍යවහාරික ජීව විද්‍යාව</h2>
         <div class="lock-container">
             <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
             <div class="password-container">
                 <input type="password" id="pack-10-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
                 <span class="toggle-password" onclick="togglePasswordVisibility('pack-10-pass')">👁️</span>
             </div>
-            <button onclick="checkPassword('pack-10', 'ECO')">අගුළු අරින්න</button>
+            <button onclick="checkPassword('pack-10', 'APPLIED')">අගුළු අරින්න</button>
         </div>
         <div class="card-container locked-content pack-10">
             <div class="flashcard">
-                <div class="card-front"><p>ප්‍රශ්නය: පාරිසරික පිරමිඩයක පහළම මට්ටමේ සිටින්නේ කවුද?</p></div>
-                <div class="card-back"><p>පිළිතුර: නිෂ්පාදකයන් (ශාක)</p></div>
+                <div class="card-front"><p>ප්‍රශ්නය: ජාන තාක්ෂණය යොදාගෙන නිපදවන ලද ප්‍රධාන හෝමෝනයක් නම් කරන්න.</p></div>
+                <div class="card-back"><p>පිළිතුර: ඉන්සියුලින්</p></div>
             </div>
         </div>
     </div>
     
     <script>
+        // Function to display a specific flashcard pack
         function showPack(packId) {
+            // Hide all flashcard packs first
             document.querySelectorAll('.flashcard-pack, .locked-pack').forEach(pack => {
                 pack.style.display = 'none';
             });
             
+            // Show the selected pack
             const pack = document.getElementById(packId);
             pack.style.display = 'block';
 
+            // Scroll to the selected pack for better user experience
             pack.scrollIntoView({ behavior: 'smooth' });
         }
 
+        // Function to toggle password visibility (show/hide)
         function togglePasswordVisibility(id) {
             const passwordInput = document.getElementById(id);
             if (passwordInput.type === 'password') {
@@ -364,22 +469,27 @@
             }
         }
 
+        // Function to check the entered password and unlock the pack
         function checkPassword(packId, correctPassword) {
             const inputId = `${packId}-pass`;
             const enteredPassword = document.getElementById(inputId).value.trim().toUpperCase();
 
+            // Check if the entered password matches the correct one
             if (enteredPassword === correctPassword) {
                 const pack = document.getElementById(packId);
                 const lockedContent = pack.querySelector('.locked-content');
                 const lockContainer = pack.querySelector('.lock-container');
 
+                // If password is correct, show the flashcards and hide the lock container
                 lockedContent.style.display = 'flex';
                 lockContainer.style.display = 'none';
             } else {
+                // If password is incorrect, show an alert (or a custom message box)
                 alert("වැරදි මුරපදය! නැවත උත්සාහ කරන්න.");
             }
         }
         
+        // Add click event listener to all flashcards to toggle the "flipped" class
         document.querySelectorAll('.flashcard').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('flipped');
