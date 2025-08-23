@@ -14,12 +14,51 @@
             margin: 0;
             padding: 20px;
         }
+
+        .pack-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .pack-buttons button {
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .pack-buttons button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-1 { background-color: #007bff; }
+        .btn-2 { background-color: #28a745; }
+        .btn-3 { background-color: #dc3545; }
+        .btn-4 { background-color: #ffc107; color: #333; }
+        .btn-5 { background-color: #17a2b8; }
+        .btn-6 { background-color: #6c757d; }
+        .btn-7 { background-color: #6610f2; }
+        .btn-8 { background-color: #fd7e14; }
+        .btn-9 { background-color: #e83e8c; }
+        .btn-10 { background-color: #20c997; }
+
         .card-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             margin-bottom: 40px;
+            width: 100%;
         }
         .flashcard {
             width: 300px;
@@ -47,92 +86,287 @@
         .card-back { transform: rotateY(180deg); }
         .flashcard.flipped .card-front { transform: rotateY(180deg); }
         .flashcard.flipped .card-back { transform: rotateY(360deg); }
-        .card-1 .card-front { background-color: #ffe0e0; }
-        .card-1 .card-back { background-color: #ffc0c0; }
-        .card-2 .card-front { background-color: #e0f0ff; }
-        .card-2 .card-back { background-color: #c0e0ff; }
-        .card-3 .card-front { background-color: #e0ffe0; }
-        .card-3 .card-back { background-color: #c0ffc0; }
-        .card-4 .card-front { background-color: #fffac8; }
-        .card-4 .card-back { background-color: #f0e68c; }
-        .card-5 .card-front { background-color: #f0e0ff; }
-        .card-5 .card-back { background-color: #d0c0ff; }
 
-        /* අගුළු දාපු කොටස් සැඟවීමට */
-        .locked-pack {
+        /* කාඩ්පත් වලට වර්ණ ලබා දීම */
+        .pack-1 .card-front { background-color: #ffe0e0; }
+        .pack-1 .card-back { background-color: #ffc0c0; }
+        .pack-2 .card-front { background-color: #e0f0ff; }
+        .pack-2 .card-back { background-color: #c0e0ff; }
+        .pack-3 .card-front { background-color: #e0ffe0; }
+        .pack-3 .card-back { background-color: #c0ffc0; }
+        .pack-4 .card-front { background-color: #fffac8; }
+        .pack-4 .card-back { background-color: #f0e68c; }
+        .pack-5 .card-front { background-color: #f0e0ff; }
+        .pack-5 .card-back { background-color: #d0c0ff; }
+        .pack-6 .card-front { background-color: #d9e2f3; }
+        .pack-6 .card-back { background-color: #b3cbe6; }
+        .pack-7 .card-front { background-color: #f3d9e2; }
+        .pack-7 .card-back { background-color: #e6b3cb; }
+        .pack-8 .card-front { background-color: #d9f3e2; }
+        .pack-8 .card-back { background-color: #b3e6cb; }
+        .pack-9 .card-front { background-color: #f3d9d9; }
+        .pack-9 .card-back { background-color: #e6b3b3; }
+        .pack-10 .card-front { background-color: #d9f3f3; }
+        .pack-10 .card-back { background-color: #b3e6e6; }
+        
+        .flashcard-pack {
+            display: none;
+            width: 100%;
             text-align: center;
         }
+
+        .locked-pack {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .unlocked-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
         .locked-content {
             display: none;
         }
-        .unlocked-content {
-            display: block;
-        }
+
         .lock-container {
             margin-top: 20px;
+        }
+        
+        .password-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        h2 {
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
     <h1>ජීව විද්‍යා ෆ්ලෑෂ් කාඩ්</h1>
     
-    <div id="cell-biology" class="locked-pack">
+    <div class="pack-buttons">
+        <button class="btn-1" onclick="showPack('pack-1')">සෛල ජීව විද්‍යාව</button>
+        <button class="btn-2" onclick="showPack('pack-2')">මානව දේහය</button>
+        <button class="btn-3" onclick="showPack('pack-3')">ප්‍රභාසංස්ලේෂණය</button>
+        <button class="btn-4" onclick="showPack('pack-4')">ජාන විද්‍යාව</button>
+        <button class="btn-5" onclick="showPack('pack-5')">පරිණාමය</button>
+        <button class="btn-6" onclick="showPack('pack-6')">ශාක</button>
+        <button class="btn-7" onclick="showPack('pack-7')">සත්ව</button>
+        <button class="btn-8" onclick="showPack('pack-8')">වෛරස්</button>
+        <button class="btn-9" onclick="showPack('pack-9')">බැක්ටීරියා</button>
+        <button class="btn-10" onclick="showPack('pack-10')">පාරිසරික</button>
+    </div>
+
+    <div id="pack-1" class="flashcard-pack">
         <h2>සෛල ජීව විද්‍යාව</h2>
-        <div class="lock-container">
-            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
-            <input type="password" id="cell-biology-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
-            <button onclick="checkPassword('cell-biology', 'CELLS')">අගුළු අරින්න</button>
-        </div>
-        <div class="card-container locked-content">
-            <div class="flashcard card-1">
+        <div class="card-container pack-1 unlocked-content">
+            <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: සෛලයක ශක්ති කර්මාන්ත ශාලාව ලෙස හඳුන්වන්නේ කුමක්ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: මයිටොකොන්ඩ්‍රියා</p></div>
             </div>
-            <div class="flashcard card-2">
+            <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: ශාක සෛල වල අඩංගු හරිතප්‍රද පිහිටා ඇත්තේ කුමන ඉන්ද්‍රිකාවේ ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: හරිතලව</p></div>
             </div>
         </div>
     </div>
 
-    <div id="human-body" class="locked-pack">
+    <div id="pack-2" class="flashcard-pack">
         <h2>මානව දේහය</h2>
-        <div class="lock-container">
-            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
-            <input type="password" id="human-body-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
-            <button onclick="checkPassword('human-body', 'BODY123')">අගුළු අරින්න</button>
-        </div>
-        <div class="card-container locked-content">
-            <div class="flashcard card-3">
+        <div class="card-container pack-2 unlocked-content">
+            <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: මානව රුධිරයේ ඇති ප්‍රධානම ප්‍රෝටීනය කුමක්ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: ඇල්බියුමින්</p></div>
             </div>
-            <div class="flashcard card-4">
+            <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: මානව දේහයේ විශාලතම අස්ථිය කුමක්ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: කලව අස්ථිය (Femur)</p></div>
             </div>
         </div>
     </div>
     
-    <div id="photosynthesis" class="locked-pack">
+    <div id="pack-3" class="locked-pack">
         <h2>ප්‍රභාසංස්ලේෂණය</h2>
         <div class="lock-container">
             <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
-            <input type="password" id="photosynthesis-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
-            <button onclick="checkPassword('photosynthesis', 'LIGHT')">අගුළු අරින්න</button>
+            <div class="password-container">
+                <input type="password" id="pack-3-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-3-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-3', 'LIGHT')">අගුළු අරින්න</button>
         </div>
-        <div class="card-container locked-content">
-            <div class="flashcard card-5">
+        <div class="card-container locked-content pack-3">
+            <div class="flashcard">
                 <div class="card-front"><p>ප්‍රශ්නය: ප්‍රභාසංස්ලේෂණයේදී ශාක මගින් නිපදවන වායුව කුමක්ද?</p></div>
                 <div class="card-back"><p>පිළිතුර: ඔක්සිජන්</p></div>
             </div>
         </div>
     </div>
 
+    <div id="pack-4" class="locked-pack">
+        <h2>ජාන විද්‍යාව</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-4-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-4-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-4', 'GENES')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-4">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: DNA හි ද්විත්ව හෙලික්සීය ව්‍යුහය සොයාගත්තේ කවුරුන් විසින්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ජේම්ස් වොට්සන් සහ ෆ්‍රැන්සිස් ක්‍රික්</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pack-5" class="locked-pack">
+        <h2>පරිණාමය</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-5-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-5-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-5', 'EVOLVE')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-5">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: "On the Origin of Species" කෘතිය රචනා කළ විද්‍යාඥයා කවුද?</p></div>
+                <div class="card-back"><p>පිළිතුර: චාල්ස් ඩාවින්</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pack-6" class="locked-pack">
+        <h2>ශාක</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-6-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-6-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-6', 'PLANTS')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-6">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: ශාකයක ප්‍රභාසංස්ලේෂණය සඳහා අවශ්‍ය ප්‍රධාන ද්‍රව්‍ය මොනවාද?</p></div>
+                <div class="card-back"><p>පිළිතුර: කාබන්ඩයොක්සයිඩ්, ජලය සහ ආලෝකය</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pack-7" class="locked-pack">
+        <h2>සත්ව</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-7-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-7-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-7', 'ANIMALS')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-7">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: පෘථිවියේ විශාලතම සත්වයා කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: නිල් තල්මසා</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pack-8" class="locked-pack">
+        <h2>වෛරස්</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-8-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-8-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-8', 'VIRUS')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-8">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: වෛරසයක ප්‍රධාන සංරචක මොනවාද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ප්‍රෝටීන් කබායක් සහ න්‍යෂ්ටික අම්ලයක් (DNA හෝ RNA)</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pack-9" class="locked-pack">
+        <h2>බැක්ටීරියා</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-9-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-9-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-9', 'BACTERIA')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-9">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: යෝගට් සෑදීම සඳහා භාවිතා කරන ප්‍රධාන බැක්ටීරියා වර්ගය කුමක්ද?</p></div>
+                <div class="card-back"><p>පිළිතුර: ලැක්ටොබැසිලස් (Lactobacillus)</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pack-10" class="locked-pack">
+        <h2>පාරිසරික</h2>
+        <div class="lock-container">
+            <p>මෙම ෆ්ලෑෂ් කාඩ් පැක් එක අගුළු දමා ඇත.</p>
+            <div class="password-container">
+                <input type="password" id="pack-10-pass" placeholder="මුරපදය ඇතුළත් කරන්න">
+                <span class="toggle-password" onclick="togglePasswordVisibility('pack-10-pass')">👁️</span>
+            </div>
+            <button onclick="checkPassword('pack-10', 'ECO')">අගුළු අරින්න</button>
+        </div>
+        <div class="card-container locked-content pack-10">
+            <div class="flashcard">
+                <div class="card-front"><p>ප්‍රශ්නය: පාරිසරික පිරමිඩයක පහළම මට්ටමේ සිටින්නේ කවුද?</p></div>
+                <div class="card-back"><p>පිළිතුර: නිෂ්පාදකයන් (ශාක)</p></div>
+            </div>
+        </div>
+    </div>
+    
     <script>
+        function showPack(packId) {
+            document.querySelectorAll('.flashcard-pack, .locked-pack').forEach(pack => {
+                pack.style.display = 'none';
+            });
+            
+            const pack = document.getElementById(packId);
+            pack.style.display = 'block';
+
+            pack.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function togglePasswordVisibility(id) {
+            const passwordInput = document.getElementById(id);
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
         function checkPassword(packId, correctPassword) {
             const inputId = `${packId}-pass`;
-            const enteredPassword = document.getElementById(inputId).value;
+            const enteredPassword = document.getElementById(inputId).value.trim().toUpperCase();
 
             if (enteredPassword === correctPassword) {
                 const pack = document.getElementById(packId);
